@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація | FAST/GAMEPLAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <!-- Логотип веде назад на головну сторінку. -->
+  <header class="register-header">
+    <a class="register-brand" href="index.html" aria-label="FAST/GAMEPLAY">
+      <img src="assets/logo-mark.png" alt="">
+      <span>FAST/GAMEPLAY</span>
+    </a>
+  </header>
+
+  <!-- Основна картка реєстрації. Кнопка "Далі" відкриває блок підтвердження паролю. -->
+  <main class="register-main">
+    <form class="register-card" aria-label="Форма реєстрації">
+      <h1>Реєстрація</h1>
+
+      <label class="field">
+        <span>gmail</span>
+        <input type="email" autocomplete="email" aria-label="gmail">
+      </label>
+
+      <label class="field password-field">
+        <span>password</span>
+        <input type="password" autocomplete="new-password" aria-label="password">
+        <button class="eye-btn" type="button" aria-label="Показати пароль">
+          <span></span>
+        </button>
+      </label>
+
+      <div class="confirm-panel" hidden>
+        <label class="field">
+          <strong>Підтвердження паролю</strong>
+          <span>password</span>
+          <input type="password" autocomplete="new-password" aria-label="Підтвердження паролю">
+        </label>
+      </div>
+
+      <div class="checks">
+        <label class="check-row">
+          <input type="checkbox">
+          <span></span>
+          <em>я приймаю умови та пропозиції</em>
+        </label>
+        <label class="check-row">
+          <input type="checkbox" checked>
+          <span></span>
+          <em>підписатися на розсилку</em>
+        </label>
+      </div>
+
+      <section class="social-register" aria-label="Реєстрація за допомогою">
+        <h2>Реєстрація за допомогою</h2>
+        <button class="google-btn" type="button" aria-label="Продовжити з Google">
+          <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+        </button>
+        <a href="login.html" class="auth-link">Авторизація</a>
+      </section>
+
+      <button class="next-btn" type="button">Далі</button>
+    </form>
+  </main>
+
+  <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+:root {
+  /* Спільна палітра для сторінок реєстрації та авторизації. */
+  --bg: #211925;
+  --card: #3b3340;
+  --line: #d8d3dc;
+  --muted: #c7bfcb;
+  --pink: #ff0b72;
+  --purple: #9d5bc6;
+  --white: #f9f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  /* Фон сторінки: саме зображення + легкі темні шари для читабельності форми. */
+  margin: 0;
+  min-width: 320px;
+  color: var(--white);
+  background:
+    linear-gradient(180deg, rgba(33, 25, 37, 0.07), rgba(33, 25, 37, 0.07)),
+    linear-gradient(90deg, rgba(33, 25, 37, 0.07), rgba(33, 25, 37, 0.05) 48%, rgba(33, 25, 37, 0.07)),
+    url("assets/register-bg.png") center / cover fixed;
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 700;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(157, 91, 198, 0.06), transparent 28rem);
+  pointer-events: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.register-header {
+  /* Фіксований логотип у верхньому лівому куті, як у макеті. */
+  position: fixed;
+  top: 18px;
+  left: 124px;
+  z-index: 2;
+}
+
+.register-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.register-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+.register-main {
+  /* Центрує форму на екрані. */
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 92px 20px 60px;
+}
+
+.register-card {
+  /* Базова картка форми. Її також використовує сторінка авторизації. */
+  width: 360px;
+  min-height: 520px;
+  margin-top: 70px;
+  padding: 27px 26px 24px;
+  border: 2px solid rgba(157, 91, 198, 0.58);
+  border-radius: 19px;
+  background: rgba(59, 51, 64, 0.9);
+  box-shadow: 0 0 30px rgba(22, 16, 27, 0.22);
+  backdrop-filter: blur(1px);
+}
+
+.register-card h1 {
+  margin: 0 0 34px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.field {
+  /* Один рядок поля: підпис зверху, тонка лінія вводу знизу. */
+  position: relative;
+  display: block;
+  margin-bottom: 29px;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.field input {
+  display: block;
+  width: 100%;
+  height: 17px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.field input:focus {
+  border-bottom-color: #fff;
+}
+
+.password-field {
+  margin-bottom: 30px;
+}
+
+.eye-btn {
+  position: absolute;
+  right: -2px;
+  bottom: 2px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.eye-btn span {
+  width: 13px;
+  height: 9px;
+  margin: 0;
+  border: 2px solid var(--purple);
+  border-radius: 50%;
+}
+
+.eye-btn span::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: 1px auto 0;
+  border-radius: 50%;
+  background: var(--purple);
+}
+
+.confirm-panel {
+  /* Другий крок реєстрації: підтвердження паролю. */
+  margin: -11px 0 26px;
+  padding: 15px 12px 14px;
+  border: 2px solid var(--purple);
+  border-radius: 14px;
+}
+
+.confirm-panel .field {
+  margin: 0;
+}
+
+.confirm-panel strong {
+  display: block;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.checks {
+  /* Чекбокси першого кроку реєстрації. */
+  display: grid;
+  gap: 14px;
+  margin: 0 0 48px;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d6ceda;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.check-row input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.check-row span {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--purple);
+  border-radius: 4px;
+}
+
+.check-row input:checked + span {
+  border-color: var(--pink);
+  background: var(--pink);
+}
+
+.check-row input:checked + span::after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.check-row em {
+  font-style: normal;
+}
+
+.social-register {
+  /* Блок входу/реєстрації через Google. */
+  text-align: center;
+}
+
+.social-register h2 {
+  margin: 0 0 15px;
+  font-size: 15px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.google-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 182px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.g-blue {
+  color: #4285f4;
+}
+
+.g-red {
+  color: #ea4335;
+}
+
+.g-yellow {
+  color: #fbbc05;
+}
+
+.g-green {
+  color: #34a853;
+}
+
+.auth-link {
+  display: table;
+  margin: 11px auto 43px;
+  border-bottom: 1px solid #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  min-height: 48px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 9px;
+  background: var(--pink);
+  box-shadow: 0 0 18px rgba(255, 11, 114, 0.18);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.next-btn:hover,
+.next-btn:focus-visible {
+  box-shadow: 0 0 18px rgba(255, 11, 114, 0.35);
+  transform: translateY(-1px);
+}
+
+.register-card.is-confirm {
+  min-height: 520px;
+}
+
+.register-card.is-confirm .checks {
+  display: none;
+}
+
+.register-card.is-confirm .social-register {
+  margin-top: 25px;
+}
+
+.register-card.is-confirm .auth-link {
+  margin-bottom: 43px;
+}
+
+.login-card {
+  /* Авторизація коротша за реєстрацію, тому має окрему висоту й відступи. */
+  min-height: 390px;
+  padding-top: 34px;
+}
+
+.login-card h1 {
+  margin-bottom: 42px;
+}
+
+.login-card .password-field {
+  margin-bottom: 78px;
+}
+
+.login-btn {
+  margin-bottom: 17px;
+}
+
+.register-link {
+  display: table;
+  margin: 0 auto;
+  border-bottom: 1px solid #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .register-header {
+    top: 16px;
+    left: 20px;
+  }
+
+  .register-brand {
+    font-size: 16px;
+  }
+
+  .register-brand img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .register-main {
+    align-items: start;
+    padding-top: 110px;
+  }
+
+  .register-card {
+    width: min(360px, 100%);
+    margin-top: 0;
+  }
+}
