@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAST/GAMEPLAY - v03</title>
+  <title>FAST/GAMEPLAY - v04</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
@@ -11,33 +11,25 @@
 </head>
 <body>
   <header class="top shell">
+    <div class="menu">
+      <button class="menu-btn" type="button">☰</button>
+      <nav class="drop"><a href="#home">Головна</a><a href="#games">Ігри</a><a href="#pricing">Тарифи</a><a href="#">Вхід</a></nav>
+    </div>
     <a class="brand" href="#"><img src="assets/logo-mark.png" alt=""><span>FAST/GAMEPLAY</span></a>
-    <a class="btn small" href="#">Завантажити клієнт</a>
+    <a class="btn small download" href="#">Завантажити клієнт</a>
   </header>
   <main>
-    <section class="hero shell">
-      <div>
-        <h1>Відкрийте<br><strong>віртуальний світ</strong><br>Розваг та Пригод!</h1>
-        <p>Хмарний геймінг для всіх</p>
-        <a class="btn hero-btn" href="#games">Почати грати</a>
-      </div>
-      <img class="hero-img" src="assets/hero-gamepad.png" alt="">
-    </section>
-    <section class="features shell">
-      <article><img src="assets/icon-cross.png" alt=""><h2>Легкий у використанні</h2><p>Інтернет від 60мб/с, 50 мегабайтів місця, Windows x64 і MacOS.</p></article>
-      <article><img src="assets/icon-cross.png" alt=""><h2>Грай коли забажається</h2><p>Реєстрація, скачай, грай. Сервери доступні 24/7.</p></article>
-      <article><img src="assets/icon-cross.png" alt=""><h2>Потужне обладнання</h2><p>Топові відеокарти, SSD-сховище і формат до 4K 60fps.</p></article>
-      <article><img src="assets/icon-cross.png" alt=""><h2>Українські сервери</h2><p>Сервери знаходяться на території України.</p></article>
-      <article class="bonus"><strong>Даруємо 1 годину гри безкоштовно при реєстрації</strong><a class="btn" href="#">Реєстрація</a></article>
-    </section>
+    <section class="hero shell" id="home"><div><h1>Відкрийте<br><strong>віртуальний світ</strong><br>Розваг та Пригод!</h1><p>Хмарний геймінг для всіх</p><a class="btn hero-btn" href="#games">Почати грати</a></div><img class="hero-img" src="assets/hero-gamepad.png" alt=""></section>
     <section class="games shell" id="games">
-      <h2 class="section-title">Наші ігри</h2>
-      <div class="grid">
-        <article class="game"><img src="assets/game-baldurs-gate.png" alt=""><h3>Baldur's Gate 3</h3><a href="#">Грати</a></article>
-        <article class="game"><img src="assets/game-dota.png" alt=""><h3>Dota 2</h3><a href="#">Грати</a></article>
-        <article class="game"><img src="assets/game-cyberpunk.png" alt=""><h3>Cyberpunk 2077</h3><a href="#">Грати</a></article>
-      </div>
+      <div class="section-line"><h2 class="section-title">Наші ігри</h2><div class="tabs"><button class="tab active" data-filter="all">Всі</button><button class="tab" data-filter="top">Топові</button><button class="tab" data-filter="free">Безкоштовні</button></div></div>
+      <div class="grid"><article class="game" data-category="top"><img src="assets/game-baldurs-gate.png" alt=""><h3>Baldur's Gate 3</h3><a href="#">Грати</a></article><article class="game" data-category="top free"><img src="assets/game-dota.png" alt=""><h3>Dota 2</h3><a href="#">Грати</a></article><article class="game" data-category="top"><img src="assets/game-cyberpunk.png" alt=""><h3>Cyberpunk 2077</h3><a href="#">Грати</a></article></div>
+      <button class="show-all" type="button">Показати всі</button>
     </section>
+    <section class="pricing shell" id="pricing"><h2 class="section-title center">Наші тарифи</h2><div class="grid"><article class="plan start"><h3>Початковий</h3><p>Демо режим для знайомства з сервісом.</p><strong>0₴</strong></article><article class="plan standard"><h3>Стандарт</h3><p>Звичайний погодинний пакет.</p><strong>від 30₴</strong></article><article class="plan pro"><h3>Профі</h3><p>Тариф для активних гравців.</p><strong>від 1000₴</strong></article></div></section>
+    <section class="basement"><img src="assets/basement-image.png" alt=""></section>
   </main>
+  <footer class="footer shell"><div><h2>Категорії</h2><a href="#">Ігри</a><a href="#">Про платформу</a><a href="#">Новини</a></div><div><h2>Особистий кабінет</h2><a href="#">Мої дані</a><a href="#">Тариф</a><a href="#">Мій рахунок</a></div><div><h2>Наша інформація</h2><button class="client-link" type="button">Скачати клієнт</button></div></footer>
+  <div class="toast"><strong>Скачати клієнт?</strong><span>Підтвердіть завантаження.</span><div><button class="ok">Скачати</button><button class="cancel">Скасувати</button></div></div>
+  <script src="script.js"></script>
 </body>
 </html>
