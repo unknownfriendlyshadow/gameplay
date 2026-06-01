@@ -40,30 +40,50 @@ button { border: 0; font: inherit; }
   font-weight: 900;
 }
 .brand img { width: 57px; height: 57px; }
-.section-title { margin: 0 0 42px; font-size: 40px; line-height: 1; }.top { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; }
-.small { min-height: 40px; padding-inline: 22px; font-size: 11px; }
+.section-title { margin: 0 0 42px; font-size: 40px; line-height: 1; }.top { display: flex; align-items: center; gap: 20px; justify-content: space-between; padding-top: 18px; position: relative; z-index: 3; }
+.small { min-height: 40px; font-size: 11px; }
+.menu { position: relative; }
+.menu-btn { width: 43px; height: 43px; border-radius: 50%; background: var(--pink); color: white; cursor: pointer; }
+.drop { position: absolute; top: 55px; left: 0; min-width: 160px; padding: 10px; border: 1px solid var(--stroke); border-radius: 8px; background: rgba(52,43,59,.96); opacity: 0; pointer-events: none; transform: translateY(-8px); transition: .18s; }
+.menu.open .drop { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.drop a { display: block; padding: 10px; border-radius: 6px; }
+.drop a:hover { background: rgba(255,11,114,.13); }
 .hero { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; min-height: 700px; }
 .hero h1 { margin: 0; font-size: clamp(40px, 4vw, 58px); line-height: 1.18; font-weight: 500; }
 .hero strong { font-weight: 900; }
-.hero p { margin: 22px 0 50px; color: var(--muted); }
+.hero p { color: var(--muted); margin: 22px 0 50px; }
 .hero-btn { width: 251px; min-height: 76px; font-size: 18px; }
 .hero-img { width: min(680px, 100%); justify-self: end; }
-.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px 38px; padding-bottom: 88px; }
-.features article, .game {
-  border: 1px solid var(--stroke);
-  border-radius: 13px;
-  background: rgba(58, 48, 65, .9);
-}
-.features article { min-height: 190px; padding: 20px; transition: box-shadow .18s ease, transform .18s ease; }
-.features article:hover, .game:hover { box-shadow: 0 0 22px rgba(176, 88, 216, .18); transform: translateY(-3px); }
-.features img { width: 54px; height: 54px; padding: 12px; border-radius: 12px; background: var(--pink); }
-.features h2 { margin: 16px 0 12px; font-size: 16px; text-transform: uppercase; }
-.features p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
-.bonus { grid-column: span 2; display: flex; align-items: center; justify-content: flex-end; gap: 34px; background: linear-gradient(90deg, rgba(33,25,37,.1), rgba(33,25,37,.82)), url("assets/bonus-art.png") center/cover !important; }
-.bonus strong { width: 300px; font-size: 19px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 38px; padding-bottom: 90px; }
-.game { overflow: hidden; transition: box-shadow .18s ease, transform .18s ease; }
+.section-line { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.tabs { display: flex; gap: 18px; }
+.tab, .show-all { min-height: 54px; padding: 0 22px; border-radius: 7px; background: #403647; color: white; cursor: pointer; }
+.tab.active, .tab:hover, .show-all:hover { background: var(--pink); box-shadow: 0 0 18px rgba(255,11,114,.28); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 38px; }
+.game, .plan { border: 1px solid var(--stroke); border-radius: 13px; background: var(--panel); overflow: hidden; transition: .18s; }
+.game:hover, .plan:hover { box-shadow: 0 0 22px rgba(176,88,216,.18); transform: translateY(-4px); }
 .game img { width: 100%; display: block; aspect-ratio: 374/305; object-fit: cover; }
 .game h3 { margin: 24px 20px 30px; font-size: 13px; text-transform: uppercase; }
 .game a { display: inline-flex; margin: 0 20px 24px; min-width: 144px; min-height: 52px; align-items: center; justify-content: center; border: 2px solid var(--pink); border-radius: 4px; text-transform: uppercase; }
-@media (max-width: 900px) { .hero, .features, .grid { grid-template-columns: 1fr; } .bonus { grid-column: auto; } }
+.show-all { display: flex; align-items: center; justify-content: center; width: 358px; margin: 50px auto 110px; }
+.center { text-align: center; }
+.pricing { padding-bottom: 64px; }
+.plan { min-height: 466px; padding: 26px 20px; background-size: cover; background-position: center; position: relative; isolation: isolate; }
+.plan::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(33,25,37,.62); }
+.start { background-image: url("assets/tariff-start.png"); }
+.standard { background-image: url("assets/tariff-standard.png"); }
+.pro { background-image: url("assets/tariff-pro.png"); }
+.plan h3 { text-align: center; font-size: 28px; text-transform: uppercase; }
+.plan strong { position: absolute; left: 20px; bottom: 24px; }
+.basement { height: 498px; overflow: hidden; position: relative; }
+.basement::before, .basement::after { content: ""; position: absolute; left: 0; right: 0; height: 90px; z-index: 1; pointer-events: none; }
+.basement::before { top: 0; background: linear-gradient(var(--bg), transparent); }
+.basement::after { bottom: 0; background: linear-gradient(0deg, var(--bg), transparent); }
+.basement img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.footer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px; padding: 70px 0 118px; }
+.footer a, .footer button { display: block; margin-bottom: 18px; color: var(--muted); background: none; cursor: pointer; }
+.footer a:hover, .footer button:hover { color: white; text-shadow: 0 0 12px rgba(255,11,114,.45); }
+.toast { position: fixed; right: 24px; bottom: 24px; display: none; gap: 8px; padding: 18px 20px; border: 1px solid var(--stroke); border-radius: 8px; background: rgba(52,43,59,.96); }
+.toast.show { display: grid; }
+.toast button { min-height: 36px; padding: 0 14px; border-radius: 6px; color: #fff; background: var(--pink); cursor: pointer; }
+.game.hide { display: none; }
+@media (max-width: 900px) { .hero, .grid, .footer { grid-template-columns: 1fr; } }
