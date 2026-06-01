@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизація | FAST/GAMEPLAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <!-- Логотип веде назад на головну сторінку. -->
+  <header class="register-header">
+    <a class="register-brand" href="index.html" aria-label="FAST/GAMEPLAY">
+      <img src="assets/logo-mark.png" alt="">
+      <span>FAST/GAMEPLAY</span>
+    </a>
+  </header>
+
+  <!-- Картка авторизації використовує ті самі стилі, що й реєстрація. -->
+  <main class="register-main">
+    <form class="register-card login-card" aria-label="Форма авторизації">
+      <h1>Авторизація</h1>
+
+      <label class="field">
+        <span>gmail</span>
+        <input type="email" autocomplete="email" aria-label="gmail">
+      </label>
+
+      <label class="field password-field">
+        <span>password</span>
+        <input type="password" autocomplete="current-password" aria-label="password">
+        <button class="eye-btn" type="button" aria-label="Показати пароль">
+          <span></span>
+        </button>
+      </label>
+
+      <button class="next-btn login-btn" type="button">Вхід</button>
+      <a href="register.html" class="register-link">Реєстрація</a>
+    </form>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
