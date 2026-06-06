@@ -3,8 +3,10 @@
   <br>
 Макет сайту - https://www.figma.com/design/ZUB2Tn8FlEfIDzxfVnpDCK/fast-gameplay?node-id=0-1&t=ChYXiue3iwZUlnLS-1
 <br>
+   <br>
   Pages - https://unknownfriendlyshadow.github.io/gameplay/
   <br>
+   <br>
 <h3>Опис сайту</h3>
 Це сайт сервісу <b>FAST/GAMEPLAY</b> - платформи для хмарного геймінгу
 <br>
